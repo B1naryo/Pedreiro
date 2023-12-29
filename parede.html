@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tijolos para construir paredes em uma casa</title>
+<?php
+	// Inicia a sessão
+	session_start();
+
+	// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
+	if(!isset($_SESSION["logado"]) || $_SESSION["logado"] !== true){
+	    header("location: index.php");
+	    exit;
+	}
+	?>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+
+    <header>
+     <center> <h1>Calculadora de Tijolos para construir uma casa</h1></center>
+    </header>
+
+<main style="position: relative;">
+
+
+  <div class="container">
+    <div style="top: 10px; left: 10px;">
+      <div style="padding: 10px;">
+  <button type="submit" name="calcular" onclick="calcularcomodo(event)">Calcular</button>
+  <button type="button" onclick="removerInputs()">Realizar outro cálculo</button>
+  <button type="button" onclick="gerarInputs()">Gerar paredes</button>
+  
+</div>
+
+    </div>
+    
+    <div class="box">
+      <form id="formulario">
+        <label for="tipoTijolo">Tipo de tijolo:</label>
+        <select id="tipoTijolo" name="tipoTijolo">
+          <option value="baiano6">Tijolo baiano de 6 furos</option>
+          <option value="baiano8">Tijolo baiano de 8 furos</option>
+          <option value="baiano9">Tijolo baiano de 9 furos</option>
+          <option value="tijomamaciço">Tijolo Maciço</option>
+          <option value="blocoestrutural">Bloco estrutural</option>
+          <option value="tijodeitadotipo1">Tijolinho deitado tipo1</option>
+        </select>
+        <label for="altura">Altura da parede:</label>
+        <input type="number" id="altura" name="altura" placeholder="Altura" required>
+        <label for="qtdInputs">Informe a quantidade de paredes da casa:</label>
+        <input type="number" id="qtdInputs" name="qtdInputs" min="1" required>
+        <div id="inputsParedes"></div>
+	
+
+      </form>
+
+
+<p id="resultado"></p>
+    </div>
+
+
+
+
+  </div>
+
+</main>
+
+<script src="js/calcular1.js"></script>
+<footer>
+ <center> <p>&copy; 2023 - Sandro</p></center>
+</footer>
+
+
+  </body>
+</html>

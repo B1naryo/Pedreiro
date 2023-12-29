@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Materiais para Contrapiso Residencial</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+
+    <header>
+     <center> <h1>Calculadora de Materiais para Contrapiso Residencial</h1></center>
+    </header>
+
+<main style="position: relative;">
+
+
+  <div class="container">
+    <div style="top: 10px; left: 10px;">
+      <div style="padding: 10px;">
+  <button type="submit" name="calcular" onclick="calcularcimento(event)">Calcular</button>
+  <button type="button" onclick="removerInput()">Realizar outro cálculo</button>
+  <button type="button" onclick="gerarInput()">Gerar comodos</button>
+  
+</div>
+
+    </div>
+
+    
+   <<div class="box">
+      <form id="formulario">
+        <label for="tipoTijolo">Tipo de contrapiso:</label>
+        <select id="tipoTijolo" name="tipoTijolo">
+          <option value="baiano6">Comodo</option>
+          <option value="baiano8">Completo</option>
+          
+        </select>
+  <label for="altura">Largura do comodo:</label>
+        <input type="number" id="altura" name="altura" placeholder="Largura" required>
+        <label for="qtdInputs">Informe a quantidade de comodos da casa:</label>
+        <input type="number" id="qtdInputs" name="qtdInputs" min="1" required>
+        <div id="inputsParedes"></div>
+
+</form>
+
+
+<p id="resultado"></p>
+<script>
+  function alterarLabelAltura() {
+    const select = document.getElementById('tipoTijolo');
+    const labelAltura = document.getElementById('labelAltura');
+    const labelQtdInputs = document.getElementById('labelQtdInputs');
+    if (select.value === 'baiano8') {
+      labelAltura.setAttribute('for', 'largura');
+      labelAltura.innerText = 'Largura do comodo:';
+      labelQtdInputs.innerText = 'Informe a quantidade de comodos:';
+    } else {
+      labelAltura.setAttribute('for', 'altura');
+      labelAltura.innerText = 'Altura da parede:';
+      labelQtdInputs.innerText = 'Informe a quantidade de paredes da casa:';
+    }
+  }
+</script>
+
+    <p id="resultado"></p>
+    </div>
+
+  </div>
+
+</main>
+<script src="js/calcularcimento.js"></script>
+<script src="js/calcular.js"></script>
+
+<footer>
+ <center> <p>&copy; 2023 - Sandro</p></center>
+</footer>
+
+
+  </body>
+</html>

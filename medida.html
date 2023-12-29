@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traço de Massa para Construção de uma Casa</title>
+<?php
+	// Inicia a sessão
+	session_start();
+
+	// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
+	if(!isset($_SESSION["logado"]) || $_SESSION["logado"] !== true){
+	    header("location: index.php");
+	    exit;
+	}
+	?>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+
+    <header>
+     <center> <h1>Traço de Massa para Construção de uma Casa: Escolhendo o Tipo Certo para Cada Serviço</h1></center>
+    </header>
+
+<main style="position: relative;">
+
+
+  <div class="container">
+    <div style="top: 10px; left: 10px;">
+      <div style="padding: 10px;">
+  
+  
+</div>
+
+    </div>
+
+    
+   <<div class="box">
+<p style="text-align: justify;">O traço de massa é uma mistura de materiais utilizada na construção civil para realizar diferentes tipos de serviços. A escolha correta da mistura é essencial para garantir a qualidade e a durabilidade da construção. A seguir, apresentamos os tipos de traço de massa mais comuns:</p>
+<ul>
+<li><strong>Traço de massa para assentar tijolos:</strong> 6:1. Seis baldes de areia fina e um balde de cimento com aditivo vedalite.</li>
+<li><strong>Traço de massa para rebocar uma parede de uma casa:</strong> 6:1. Seis baldes de areia fina e um balde de cimento com aditivo vedalite.</li>
+<li><strong>Traço de massa para chapiscar um muro ou uma parede:</strong> 3:1. Três baldes de areia grossa e um balde de cimento sem aditivo.</li>
+<li><strong>Traço de massa para fazer um contrapiso de uma casa:</strong> 4:1. Quatro baldes de areia grossa, quatro baldes de pedra e um balde de cimento.</li>
+<li><strong>Traço de massa para encher colunas de uma casa:</strong> 3:1. Três baldes de areia grossa, três baldes de pedra e um balde de cimento.</li>
+</ul>
+<p style="text-align: justify;">Ao utilizar a mistura correta de traço de massa para cada serviço, você garante uma obra de qualidade e evita problemas futuros. Lembre-se sempre de seguir as instruções do profissional responsável pela obra e utilizar materiais de qualidade para um resultado duradouro.</p>
+      </div>
+
+</form>
+
+
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+ <center> <p>&copy; 2023 - Sandro</p></center>
+</footer>
+
+
+  </body>
+</html>
