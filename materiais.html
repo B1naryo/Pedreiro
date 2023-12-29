@@ -4,16 +4,7 @@
 
 	<meta charset="UTF-8">
 	<title>Menus com bordas</title>
-<?php
-	// Inicia a sessão
-	session_start();
 
-	// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
-	if(!isset($_SESSION["logado"]) || $_SESSION["logado"] !== true){
-	    header("location: index.php");
-	    exit;
-	}
-	?>
 	<style>
 		body {
 			background-image: url("img/background.jpg");
@@ -75,11 +66,11 @@
 	<div class="box">
 
 <img src="img/perfil.jpg" style="border-radius: 50%; width: 150px; height: 150px;">
-	<div class="menu"><a href="contrapiso.php" target="_blank">Contrapiso</a></div>
-	<div class="menu"><a href="parede.php" target="_blank">Parede ou Muro</a></div>
-        <div class="menu"><a href="laje.php" target="_blank">Laje</a></div>
-	<div class="menu"><a href="coluna.php" target="_blank">Colunas</a></div>
-	<div class="menu"><a href="home.php" target="_blank">Voltar</a></div>
+	<div class="menu"><a href="contrapiso.html" target="_blank">Contrapiso</a></div>
+	<div class="menu"><a href="parede.html" target="_blank">Parede ou Muro</a></div>
+        <div class="menu"><a href="laje.html" target="_blank">Laje</a></div>
+	<div class="menu"><a href="coluna.html" target="_blank">Colunas</a></div>
+	<div class="menu"><a href="home.html" target="_blank">Voltar</a></div>
 
 
 
