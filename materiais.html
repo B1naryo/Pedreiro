@@ -1,81 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading...</title>
+    <link id="favicon" rel="icon" href="./assets/favicon.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
-	<meta charset="UTF-8">
-	<title>Menus com bordas</title>
+    <!-- Import .JS files -->
+    <script src="./settings.js"></script>
+    <script src="https://npmcdn.com/moralis/dist/moralis.js"></script>
 
-	<style>
-		body {
-			background-image: url("img/background.jpg");
-                        background-repeat: no-repeat;
-                        background-position: center center;
-                        background-size: cover;
-		}
+    <script type="text/javascript">
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh < 8.0 ? 8.0 : vh}px`);
+        window.addEventListener('resize', () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh < 8.0 ? 8.0 : vh}px`);
+        });
+    </script>
 
-		.box {
-			width: 500px;
-			height: 600px;
-			margin: 50px auto;
-			background-color: #f2f2f2;
-			border: 2px solid #000;
-			padding: 20px;
-			box-sizing: border-box;
-		}
-.box1 {
-  width: 100%;
-  margin: 0 auto;
-  background-color: #333;
-  color: white;
-  border: 2px solid #000;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-
-
-		.box img {
-			display: block;
-			margin: 0 auto 20px;
-			max-width: 30%;
-			height: auto;
-		}
-
-		.menu {
-  background-color: orange; /* cor marrom de tijolo */
-  border: 2px solid #000;
-  padding: 10px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
-}
-.menu:hover {
-    background-color: #8B3E2F;
-    color: #fff;
-}
-
-	</style>
+    <!-- Import CSS files -->
+    <link rel="stylesheet" type="text/css" href="./src/css/fonts.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./src/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/main.css">
 </head>
-<body>
-<div class="box1" style="text-align: center;">
-  <h1>Calculadora para construção civil</h1>
-</div>
-	<div class="box">
 
-<img src="img/perfil.jpg" style="border-radius: 50%; width: 150px; height: 150px;">
-	<div class="menu"><a href="contrapiso.html" target="_blank">Contrapiso</a></div>
-	<div class="menu"><a href="parede.html" target="_blank">Parede ou Muro</a></div>
-        <div class="menu"><a href="laje.html" target="_blank">Laje</a></div>
-	<div class="menu"><a href="coluna.html" target="_blank">Colunas</a></div>
-	<div class="menu"><a href="home.html" target="_blank">Voltar</a></div>
+<body class="body">
+    <div class="content">
+        <video id="background-video" autoplay loop muted>
+            <source id="background-video-source" type="video/mp4">
+        </video>
 
+        <div class="sub-head" id="claim-text-wrapper">
+            <div class="social_medias">
+                <a id="social_discord" href="https://discord.gg/" class="item discord social_media"
+                    target="_blank"><img src="./assets/svg/Discord_Icon.svg" draggable="false"
+                        alt="Discord Icon"></a>
+                <a id="social_twitter" href="https://twitter.com/" class="item twitter social_media"
+                    target="_blank"><img src="./assets/svg/Twitter_Icon.svg" draggable="false"
+                        alt="Twitter Icon"></a>
+            </div>
+            
+            <div id="payment-modal">
+                <div id="payment-header">
+                    <div id="payment-header-text">
+                        <h4 id="titleH4">Loading...</h4>
+                        <p id="totalSupply" class="pt-1.5 italic-grey"></p>
+                    </div>
+                </div>
+                <div id="payment-info">
+                    <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAQAAAAHUWYVAAABKUlEQVR42u3RMQEAAAjDMKYc6WCCgyOV0GS69KgAASIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAgLEBCACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiBAgAARECACAkRAgAgIEAERECACAkRAgAgIEAERECACAkSXLZ1yK0hKBJiuAAAAAElFTkSuQmCC"
+                        class="image" height="200px" id="price-img">
+                    <div id="payment-info-text">
+                        <p></p>
+                        <p class="title"><a id="nftPrice"></a> </p>
+                        <p id="dateString" class="launch-date"></p>
+                    </div>
+                </div>
 
+                <a href="contrapiso.html" target="_blank">
+                    <button class="purchase-button" id="connect">CONTRAPISO</button>
+                </a>
+                <a href="parede.html" target="_blank">
+                    <button class="purchase-button" id="connect">PAREDE OU MURO</button>
+                </a>
+<a href="laje.html" target="_blank">
+                    <button class="purchase-button" id="connect">LAJE</button>
+                </a>
+<a href="coluna.html" target="_blank">
+                    <button class="purchase-button" id="connect">COLUNAS</button>
+                </a>
+<a href="home.html" target="_blank">
+                    <button class="purchase-button" id="connect">VOLTAR</button>
+                </a>
 
-</div>
-<center><h2>Desenvolvido por Sandro</h2></center>
+            </div>
+            <script src="./src/js/loader.js"></script>
+        </div>
+    </div>
 </body>
+
 </html>
 
